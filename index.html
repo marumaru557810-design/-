@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>勉強タイマー</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- ダークモード切り替え -->
+    <button
+        id="theme-toggle-btn"
+        class="theme-toggle"
+        onclick="toggleTheme()"
+        aria-label="テーマを切り替える"
+    >
+        🌙
+    </button>
+
+
+    <!-- タイマー本体 -->
+    <div class="container">
+
+        <h1>勉強タイマー</h1>
+
+        <!-- 集中・休憩の状態 -->
+        <div id="status">
+             集中時間（25分）
+        </div>
+
+        <!-- 残り時間 -->
+        <div id="timer">
+            25:00
+        </div>
+
+        <!-- プログレスバー -->
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- 時間設定 -->
+        <div class="settings-group">
+
+            <div class="setting-item">
+                <label for="work-input">
+                    集中 (分)
+                </label>
+
+                <input
+                    type="number"
+                    id="work-input"
+                    value="25"
+                    min="1"
+                    max="180"
+                    onchange="applyCustomTime()"
+                >
+            </div>
+
+
+            <div class="setting-item">
+                <label for="break-input">
+                    休憩 (分)
+                </label>
+
+                <input
+                    type="number"
+                    id="break-input"
+                    value="5"
+                    min="1"
+                    max="60"
+                    onchange="applyCustomTime()"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- 操作ボタン -->
+        <div class="btn-group">
+
+            <button
+                id="start-btn"
+                onclick="startTimer()"
+            >
+                スタート
+            </button>
+
+            <button
+                id="stop-btn"
+                onclick="stopTimer()"
+                disabled
+            >
+                ストップ
+            </button>
+
+            <button
+                id="reset-btn"
+                onclick="resetTimer()"
+            >
+                リセット
+            </button>
+
+        </div>
+
+
+        <!-- 音のテスト -->
+        <button
+            id="sound-test-btn"
+            onclick="testSound()"
+        >
+            🔊 音をテスト
+        </button>
+
+    </div>
+
+
+    <!-- JavaScriptを読み込む -->
+    <script src="index.js" charset="UTF-8"></script>
+
+</body>
+</html>
+
+		
